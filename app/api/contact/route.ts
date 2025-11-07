@@ -35,8 +35,11 @@ export async function POST(request: Request) {
     }
 
     // Send email using Resend
+    // Note: Using Resend's test domain (onboarding@resend.dev) requires recipient email to be verified in Resend
+    // For production, set up a custom domain in Resend and update FROM_EMAIL environment variable
+    const fromEmail = process.env.FROM_EMAIL || 'onboarding@resend.dev';
     const data = await resend.emails.send({
-      from: 'Portfolio Contact Form <onboarding@resend.dev>', // Use verified domain in production
+      from: `Portfolio Contact Form <${fromEmail}>`,
       to: [process.env.CONTACT_EMAIL || 'abhay473165@gmail.com'],
       replyTo: email,
       subject: `Portfolio Contact: ${subject}`,
@@ -74,7 +77,7 @@ export async function POST(request: Request) {
             </div>
 
             <div style="margin-top: 20px; text-align: center; color: #6b7280; font-size: 12px;">
-              <p>This email was sent from your portfolio contact form at abhaygupta.dev</p>
+              <p>This email was sent from your portfolio contact form at www.guptaabhay.in</p>
             </div>
           </body>
         </html>
