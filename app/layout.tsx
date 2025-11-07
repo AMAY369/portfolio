@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://abhaygupta.dev'),
+  metadataBase: new URL('https://www.guptaabhay.in'),
   title: {
     default: "Abhay Gupta - Software Engineer & Freelance Developer",
     template: "%s | Abhay Gupta"
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "E-commerce Development",
     "API Development",
   ],
-  authors: [{ name: "Abhay Gupta", url: "https://abhaygupta.dev" }],
+  authors: [{ name: "Abhay Gupta", url: "https://www.guptaabhay.in" }],
   creator: "Abhay Gupta",
   publisher: "Abhay Gupta",
   formatDetection: {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://abhaygupta.dev",
+    url: "https://www.guptaabhay.in",
     title: "Abhay Gupta - Software Engineer & Freelance Developer",
     description: "Premium portfolio showcasing full-stack development expertise. Specializing in React, Next.js, Node.js, and mobile applications.",
     siteName: "Abhay Gupta Portfolio",
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   alternates: {
-    canonical: "https://abhaygupta.dev",
+    canonical: "https://www.guptaabhay.in",
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
@@ -113,7 +113,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Abhay Gupta",
-              url: "https://abhaygupta.dev",
+              url: "https://www.guptaabhay.in",
               sameAs: [
                 "https://github.com/amay369",
                 "https://linkedin.com/in/abhayg369",
