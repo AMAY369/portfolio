@@ -211,11 +211,11 @@ export default function About() {
             <div className="bg-gradient-to-br from-purple-500/5 to-blue-500/5 rounded-2xl p-8 border border-purple-500/10">
               <div className="flex items-center gap-3 mb-6">
                 <GraduationCap className="w-6 h-6 text-purple-600" />
-                <h4 className="text-2xl font-bold">Education & Expertise</h4>
+                <h4 className="text-2xl font-bold">Expertise</h4>
               </div>
               <div className="space-y-4">
                 <div>
-                  <h5 className="font-semibold text-lg">Full-Stack Development</h5>
+                  <h5 className="font-semibold text-lg">Software Development</h5>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                     Specialized in modern JavaScript frameworks, cloud architecture, and scalable application design
                   </p>

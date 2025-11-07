@@ -336,10 +336,6 @@ export default function Contact() {
                     </>
                   )}
                 </button>
-
-                <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                  * Required fields
-                </p>
               </form>
             </motion.div>
           </div>
