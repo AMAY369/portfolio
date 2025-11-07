@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/', '/private/'],
       },
     ],
-    sitemap: 'https://abhaygupta.dev/sitemap.xml',
-    host: 'https://abhaygupta.dev',
+    sitemap: 'https://www.guptaabhay.in/sitemap.xml',
+    host: 'https://www.guptaabhay.in',
   }
 }
