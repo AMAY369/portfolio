@@ -1,0 +1,21 @@
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.guptaabhay.in/sitemap.xml
+
+# Crawl-delay (optional - prevents aggressive crawling)
+# Crawl-delay: 1
+
+# Disallow admin pages (if you have any in the future)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Allow Google Image Bot
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow Google Ads Bot
+User-agent: AdsBot-Google
+Allow: /
