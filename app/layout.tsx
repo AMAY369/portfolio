@@ -216,19 +216,36 @@ export default function RootLayout({
                     "@id": "https://www.guptaabhay.in/#person"
                   },
                   areaServed: "Worldwide",
-                  serviceType: [
-                    "Full Stack Development",
-                    "MERN Stack Development",
-                    "Web Application Development",
-                    "Mobile App Development",
-                    "React Development",
-                    "Next.js Development",
-                    "Node.js Development",
-                    "API Development",
-                    "E-commerce Development",
-                    "ERP Systems Development",
-                    "Custom Software Development"
-                  ]
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Development Services",
+                    itemListElement: [
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Full Stack Development",
+                          description: "End-to-end web application development using modern technologies"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "MERN Stack Development",
+                          description: "MongoDB, Express.js, React.js, Node.js application development"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "React & Next.js Development",
+                          description: "Modern React and Next.js application development with TypeScript"
+                        }
+                      }
+                    ]
+                  }
                 }
               ]
             }),
