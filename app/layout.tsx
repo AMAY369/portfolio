@@ -216,6 +216,11 @@ export default function RootLayout({
                     "@id": "https://www.guptaabhay.in/#person"
                   },
                   areaServed: "Worldwide",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressCountry: "IN",
+                    addressRegion: "India"
+                  },
                   hasOfferCatalog: {
                     "@type": "OfferCatalog",
                     name: "Development Services",
