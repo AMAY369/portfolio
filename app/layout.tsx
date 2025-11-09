@@ -208,11 +208,11 @@ export default function RootLayout({
                   inLanguage: "en-US"
                 },
                 {
-                  "@type": "ProfessionalService",
-                  "@id": "https://www.guptaabhay.in/#service",
+                  "@type": "LocalBusiness",
+                  "@id": "https://www.guptaabhay.in/#business",
                   name: "Abhay Gupta - Full Stack Development Services",
                   description: "Professional web development and software engineering services by Abhay Gupta, specializing in MERN stack applications, Next.js, TypeScript, and mobile development.",
-                  provider: {
+                  founder: {
                     "@id": "https://www.guptaabhay.in/#person"
                   },
                   areaServed: "Worldwide",
@@ -221,6 +221,10 @@ export default function RootLayout({
                     addressCountry: "IN",
                     addressRegion: "India"
                   },
+                  url: "https://www.guptaabhay.in",
+                  email: "abhay473165@gmail.com",
+                  telephone: "+918090629954",
+                  priceRange: "$$",
                   hasOfferCatalog: {
                     "@type": "OfferCatalog",
                     name: "Development Services",
