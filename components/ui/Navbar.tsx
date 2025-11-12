@@ -1,18 +1,21 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Services", href: "#services" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/#services" },
+  { name: "Work", href: "/#work" },
+  { name: "Process", href: "/#process" },
+  { name: "About", href: "/#about" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -21,11 +24,16 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
+      // Only detect active section on homepage
+      if (pathname !== "/") return;
+
       // Detect active section based on scroll position
-      const sections = navItems.map((item) => ({
-        id: item.href.slice(1),
-        element: document.getElementById(item.href.slice(1)),
-      }));
+      const sections = navItems
+        .filter((item) => item.href.startsWith("/#"))
+        .map((item) => ({
+          id: item.href.slice(2), // Remove /# to get section id
+          element: document.getElementById(item.href.slice(2)),
+        }));
 
       const scrollPosition = window.scrollY + 100; // Offset for navbar height
 
@@ -44,7 +52,7 @@ export default function Navbar() {
     handleScroll(); // Initial check
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <motion.nav
@@ -61,7 +69,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <a
-            href="#home"
+            href="/"
             className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
           >
             AG
@@ -70,7 +78,8 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
-              const isActive = activeSection === item.href.slice(1);
+              const sectionId = item.href.startsWith("/#") ? item.href.slice(2) : "";
+              const isActive = pathname === "/" && activeSection === sectionId;
               return (
                 <a
                   key={item.name}
@@ -97,10 +106,10 @@ export default function Navbar() {
           {/* CTA Button - Desktop */}
           <div className="hidden md:block">
             <a
-              href="#contact"
+              href="/#contact"
               className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
             >
-              Hire Me
+              Start Your Project
             </a>
           </div>
 
@@ -129,7 +138,8 @@ export default function Navbar() {
         >
           <div className="container mx-auto px-4 py-4 space-y-4">
             {navItems.map((item) => {
-              const isActive = activeSection === item.href.slice(1);
+              const sectionId = item.href.startsWith("/#") ? item.href.slice(2) : "";
+              const isActive = pathname === "/" && activeSection === sectionId;
               return (
                 <a
                   key={item.name}
@@ -146,11 +156,11 @@ export default function Navbar() {
               );
             })}
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium"
             >
-              Hire Me
+              Start Your Project
             </a>
           </div>
         </motion.div>

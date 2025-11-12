@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
+import BackToTop from "@/components/ui/BackToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,53 +17,68 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.guptaabhay.in'),
   title: {
-    default: "Abhay Gupta - Full Stack Developer | Software Engineer | MERN Stack Expert | Freelance Developer",
+    default: "Abhay Gupta - Web Development | App Development | Software Development | Freelance Developer India",
     template: "%s | Abhay Gupta"
   },
-  description: "Abhay Gupta is a skilled Full Stack Developer, Software Engineer at Vsingh CPA LLC, and Freelance Developer specializing in MERN stack (MongoDB, Express.js, React.js, Node.js), Next.js, TypeScript. Expert in building scalable web applications, mobile apps, ERP systems, and e-commerce platforms. Available for freelance projects worldwide.",
+  description: "Abhay Gupta: Professional Web Development, App Development & Software Development services. Experienced freelance developer in India specializing in React, Next.js, MERN stack. Expert in building scalable web applications, mobile apps & custom software. Available for hire worldwide. 5+ projects delivered with 100% success rate.",
   keywords: [
-    // Primary Keywords - Your Name (CRITICAL for ranking!)
+    // Primary Keywords - Your Name (HIGHEST PRIORITY!)
     "Abhay Gupta",
     "abhay gupta",
-    "Abhay Gupta software developer",
-    "Abhay Gupta freelancer",
-    "Abhay Gupta full stack developer",
-    "Abhay Gupta portfolio",
+    "Abhay Gupta developer",
+    "Abhay Gupta freelance",
     "Abhay Gupta software engineer",
     "Abhay Gupta web developer",
-    "Abhay Gupta MERN stack",
-    "Abhay Gupta React developer",
 
-    // Job Titles & Roles
-    "Software Engineer",
-    "Full Stack Developer",
-    "Freelance Developer",
-    "MERN Stack Developer",
-    "Web Developer",
-    "Mobile App Developer",
+    // Service Keywords (TARGET KEYWORDS!)
+    "web development",
+    "app development",
+    "software development",
+    "mobile app development",
+    "freelancing",
+    "freelance developer",
+    "web development services",
+    "app development services",
+    "software development services",
 
-    // Technologies
+    // Location + Service (HIGH PRIORITY!)
+    "web development india",
+    "app development india",
+    "software development india",
+    "freelance developer india",
+    "web developer india",
+    "software engineer india",
+
+    // Long-tail Keywords (EASIER TO RANK!)
+    "freelance web developer for hire",
+    "freelance app developer",
+    "custom software development services",
+    "hire freelance developer",
+    "react developer for hire",
+    "next.js developer freelance",
+    "mern stack developer freelance",
+    "full stack developer available",
+
+    // Technology Keywords
     "React Developer",
     "Next.js Developer",
+    "MERN Stack Developer",
     "TypeScript Developer",
     "Node.js Developer",
-    "MongoDB Expert",
-    "Express.js Developer",
-    "JavaScript Developer",
+    "Full Stack Developer",
 
-    // Company & Services
-    "Vsingh CPA LLC",
-    "Freelance Web Development",
-    "Custom Software Development",
-    "ERP Systems",
+    // Service-specific
+    "Custom Web Development",
+    "Mobile Application Development",
     "E-commerce Development",
     "API Development",
-    "Mobile Application Development",
     "Responsive Web Design",
+    "PWA Development",
 
-    // Location-based
-    "Software Engineer India",
-    "Freelance Developer India",
+    // Company & Role
+    "Vsingh CPA LLC",
+    "Software Engineer",
+    "Freelance Web Development",
   ],
   authors: [{ name: "Abhay Gupta", url: "https://www.guptaabhay.in" }],
   creator: "Abhay Gupta",
@@ -76,9 +92,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.guptaabhay.in",
-    title: "Abhay Gupta - Full Stack Developer | Software Engineer | MERN Stack Expert",
-    description: "Abhay Gupta is a skilled Full Stack Developer and Software Engineer specializing in MERN stack, Next.js, TypeScript. Expert in building scalable web applications, mobile apps, and custom software solutions. Available for freelance projects.",
-    siteName: "Abhay Gupta - Portfolio",
+    title: "Abhay Gupta - Web Development | App Development | Software Development | Freelance Developer",
+    description: "Professional Web Development, App Development & Software Development services in India. Freelance developer specializing in React, Next.js, MERN stack. 5+ projects delivered. Available for hire worldwide.",
+    siteName: "Abhay Gupta - Freelance Developer Portfolio",
     images: [
       {
         url: "/og-image.jpg",
@@ -90,8 +106,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abhay Gupta - Full Stack Developer | Software Engineer",
-    description: "Abhay Gupta - Full Stack Developer specializing in MERN stack, Next.js, TypeScript. Expert in building scalable web applications and mobile solutions. Available for freelance work.",
+    title: "Abhay Gupta - Web Development | App Development | Software Development",
+    description: "Freelance Developer specializing in Web Development, App Development & Software Development. React, Next.js, MERN stack expert. Available for hire in India & worldwide.",
     images: ["/og-image.jpg"],
     creator: "@ABHAYG369",
   },
@@ -173,21 +189,23 @@ export default function RootLayout({
                   },
                   description: "Abhay Gupta is a Software Engineer and Freelance Developer specializing in full-stack development, MERN stack (MongoDB, Express.js, React.js, Node.js), web applications, and mobile solutions.",
                   knowsAbout: [
+                    "Web Development",
+                    "App Development",
+                    "Software Development",
+                    "Mobile App Development",
+                    "Freelance Development",
                     "Full Stack Development",
-                    "MERN Stack",
-                    "React",
-                    "Next.js",
-                    "TypeScript",
-                    "Node.js",
+                    "MERN Stack Development",
+                    "React Development",
+                    "Next.js Development",
+                    "TypeScript Development",
+                    "Node.js Development",
                     "MongoDB",
                     "Express.js",
-                    "PostgreSQL",
-                    "Web Development",
-                    "Mobile Development",
-                    "JavaScript",
-                    "Software Engineering",
+                    "JavaScript Development",
                     "API Development",
-                    "RESTful APIs"
+                    "E-commerce Development",
+                    "Custom Software Solutions"
                   ],
                   email: "abhay473165@gmail.com",
                   telephone: "+918090629954",
@@ -210,12 +228,12 @@ export default function RootLayout({
                 {
                   "@type": "LocalBusiness",
                   "@id": "https://www.guptaabhay.in/#business",
-                  name: "Abhay Gupta - Full Stack Development Services",
-                  description: "Professional web development and software engineering services by Abhay Gupta, specializing in MERN stack applications, Next.js, TypeScript, and mobile development.",
+                  name: "Abhay Gupta - Web Development, App Development & Software Development Services",
+                  description: "Professional web development, app development, and software development services in India by Abhay Gupta. Freelance developer specializing in React, Next.js, MERN stack, mobile apps, and custom software solutions.",
                   founder: {
                     "@id": "https://www.guptaabhay.in/#person"
                   },
-                  areaServed: "Worldwide",
+                  areaServed: ["India", "Worldwide"],
                   address: {
                     "@type": "PostalAddress",
                     addressCountry: "IN",
@@ -233,24 +251,32 @@ export default function RootLayout({
                         "@type": "Offer",
                         itemOffered: {
                           "@type": "Service",
-                          name: "Full Stack Development",
-                          description: "End-to-end web application development using modern technologies"
+                          name: "Web Development",
+                          description: "Professional web development services using React, Next.js, and modern frameworks. Custom websites, web applications, and e-commerce platforms."
                         }
                       },
                       {
                         "@type": "Offer",
                         itemOffered: {
                           "@type": "Service",
-                          name: "MERN Stack Development",
-                          description: "MongoDB, Express.js, React.js, Node.js application development"
+                          name: "App Development",
+                          description: "Mobile app development for iOS and Android using React Native. Cross-platform apps with native performance."
                         }
                       },
                       {
                         "@type": "Offer",
                         itemOffered: {
                           "@type": "Service",
-                          name: "React & Next.js Development",
-                          description: "Modern React and Next.js application development with TypeScript"
+                          name: "Software Development",
+                          description: "Custom software development services. ERP systems, CRM solutions, and enterprise applications using MERN stack."
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Freelance Development",
+                          description: "Freelance development services for startups and businesses. Full-stack development, API integration, and technical consulting."
                         }
                       }
                     ]
@@ -265,6 +291,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <BackToTop />
         <Analytics />
       </body>
     </html>

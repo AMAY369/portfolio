@@ -39,7 +39,8 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    projectType: "",
+    timeline: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -59,8 +60,12 @@ export default function Contact() {
       newErrors.email = "Invalid email format";
     }
 
-    if (!formData.subject.trim()) {
-      newErrors.subject = "Subject is required";
+    if (!formData.projectType) {
+      newErrors.projectType = "Project type is required";
+    }
+
+    if (!formData.timeline) {
+      newErrors.timeline = "Timeline is required";
     }
 
     if (!formData.message.trim()) {
@@ -100,7 +105,7 @@ export default function Contact() {
 
       setIsSubmitting(false);
       setIsSuccess(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", projectType: "", timeline: "", message: "" });
 
       // Reset success message after 5 seconds
       setTimeout(() => {
@@ -114,7 +119,7 @@ export default function Contact() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear error when user starts typing
@@ -124,7 +129,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-20 sm:py-32 bg-white dark:bg-black">
+    <section id="contact" className="py-20 sm:py-32 bg-white dark:bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -280,23 +285,54 @@ export default function Contact() {
                   {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
                 </div>
 
-                {/* Subject */}
+                {/* Project Type */}
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                    Subject *
+                  <label htmlFor="projectType" className="block text-sm font-medium mb-2">
+                    Project Type *
                   </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
+                  <select
+                    id="projectType"
+                    name="projectType"
+                    value={formData.projectType}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-900 border ${
-                      errors.subject ? "border-red-500" : "border-gray-200 dark:border-gray-800"
+                      errors.projectType ? "border-red-500" : "border-gray-200 dark:border-gray-800"
                     } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
-                    placeholder="What's this about?"
-                  />
-                  {errors.subject && <p className="mt-1 text-sm text-red-500">{errors.subject}</p>}
+                  >
+                    <option value="">Select a service...</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="mobile-app">Mobile App Development</option>
+                    <option value="custom-software">Custom Software Solutions</option>
+                    <option value="seo-optimization">SEO Optimization</option>
+                    <option value="digital-marketing">Digital Marketing</option>
+                    <option value="technical-consulting">Technical Consulting</option>
+                    <option value="other">Other / Not Sure</option>
+                  </select>
+                  {errors.projectType && <p className="mt-1 text-sm text-red-500">{errors.projectType}</p>}
+                </div>
+
+{/* Timeline */}
+                <div>
+                  <label htmlFor="timeline" className="block text-sm font-medium mb-2">
+                    When Do You Need This? *
+                  </label>
+                  <select
+                    id="timeline"
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={handleChange}
+                    className={`w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-900 border ${
+                      errors.timeline ? "border-red-500" : "border-gray-200 dark:border-gray-800"
+                    } focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all`}
+                  >
+                    <option value="">Select timeline...</option>
+                    <option value="asap">ASAP (1-2 weeks)</option>
+                    <option value="1-2-months">1-2 Months</option>
+                    <option value="2-3-months">2-3 Months</option>
+                    <option value="3-plus-months">3+ Months</option>
+                    <option value="flexible">Flexible / Just Exploring</option>
+                  </select>
+                  {errors.timeline && <p className="mt-1 text-sm text-red-500">{errors.timeline}</p>}
                 </div>
 
                 {/* Message */}

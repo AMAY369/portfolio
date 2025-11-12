@@ -5,7 +5,7 @@ import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background Gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse" />
@@ -34,6 +34,19 @@ export default function Hero() {
               </span>
             </motion.h1>
 
+            {/* Availability Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/20 rounded-full"
+            >
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+              <span className="text-sm font-medium text-green-600 dark:text-green-400">
+                Available for Freelance Projects
+              </span>
+            </motion.div>
+
             {/* Roles */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -42,15 +55,14 @@ export default function Hero() {
               className="space-y-4"
             >
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-gray-200">
-                Software Engineer & Freelance Developer
+                Web Development | App Development | Software Development
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                Software Engineer at{" "}
+                Professional <span className="font-semibold text-blue-600 dark:text-blue-400">freelance developer</span> specializing in{" "}
                 <span className="font-semibold text-blue-600 dark:text-blue-400">
-                  Vsingh CPA LLC
+                  web development, app development, and custom software development
                 </span>
-                , crafting premium web and mobile applications. Available for
-                freelance projects.
+                . I help businesses in India and worldwide build scalable web applications, mobile apps, and enterprise software solutions using React, Next.js, and the MERN stack.
               </p>
             </motion.div>
 
@@ -65,14 +77,14 @@ export default function Hero() {
                 href="#contact"
                 className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 flex items-center gap-2"
               >
-                Get In Touch
+                Start Your Project
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#projects"
+                href="#work"
                 className="group px-8 py-4 bg-white/5 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-full font-medium hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
               >
-                View Projects
+                View My Work
               </a>
             </motion.div>
 

@@ -62,7 +62,7 @@ const svgImage = `
 
     <!-- Website URL -->
     <text x="100" y="550" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="500" fill="#64748b">
-      abhaygupta.dev
+      guptaabhay.in
     </text>
   </g>
 
